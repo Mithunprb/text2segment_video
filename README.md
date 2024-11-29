@@ -50,6 +50,39 @@ python main.py --input_video_path <path_to_input_video> --output_video_path <pat
 - `--mask_video_path`: Path to save the mask video file that highlights detected objects.
 - `--text_input`: Textual description of the object or activity to detect and segment in the video.
 
+The `video_flow.py` script processes videos using RAFT-based optical flow for foreground extraction. It can be executed from the command line with arguments to specify the paths of the input and output video files, the processing mode, and optional text input for detection.
+
+### Arguments
+
+- `--input_video_path`  
+  **Required.** Path to the input video file.  
+  Example: `--input_video_path ./input_video.mp4`
+
+- `--output_video_path`  
+  **Required.** Path to save the output video file.  
+  Example: `--output_video_path ./output_video.mp4`
+
+- `--mode`  
+  **Required.** Processing mode to specify the type of operation:
+  - `OPEN_VOCABULARY_DETECTION`: Detects objects based on text input.
+  - `CAPTION_GROUNDING_MASKS`: Processes masks for grounding captions.  
+  Example: `--mode OPEN_VOCABULARY_DETECTION`
+
+- `--text_input`  
+  **Optional (Required for `OPEN_VOCABULARY_DETECTION` mode).** Text input for detecting specific objects in the video.  
+  Example: `--text_input "person walking"`
+
+### Notes
+
+1. When using `OPEN_VOCABULARY_DETECTION` mode, the `--text_input` argument is required.  
+2. Ensure RAFT is properly set up in your environment for accurate foreground extraction.
+
+### Full Example
+
+```bash
+python video_flow.py --input_video_path <path_to_input_video> --output_video_path <path_to_output_video> --mask_video_path <path_to_mask_video> --text_input "your text here"
+```
+
 ## Features
 
 - **Motion Detection**: Detect significant motions in the video to focus processing on relevant segments.
@@ -60,7 +93,6 @@ python main.py --input_video_path <path_to_input_video> --output_video_path <pat
 
 - [ ] **WebUI**
 - [ ] **Robust Video Synopsis**
-- [ ] **More Features**
 
 ## Related work
 

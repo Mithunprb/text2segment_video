@@ -20,7 +20,7 @@ def florence_get_imports(filename: Union[str, os.PathLike]) -> list[str]:
     if not str(filename).endswith("/modeling_florence2.py"):
         return get_imports(filename)
     imports = get_imports(filename)
-    imports.remove("flash_attn")
+    if "flash_attn" in imports: imports.remove("flash_attn")
     return imports
 
 def florence_load_model(

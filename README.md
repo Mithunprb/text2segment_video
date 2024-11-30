@@ -75,7 +75,7 @@ The `video_flow.py` script processes videos using RAFT-based optical flow for fo
 ### Notes
 
 1. When using `OPEN_VOCABULARY_DETECTION` mode, the `--text_input` argument is required.  
-2. Ensure RAFT is properly set up in your environment for accurate foreground extraction.
+2. Ensure RAFT is properly set up in your environment for accurate foreground extraction [Kaggle Notebook](https://www.kaggle.com/code/mithunparab/optical-flow-raft-video-summarization).
 
 ### Full Example
 

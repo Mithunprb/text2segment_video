@@ -2,9 +2,16 @@
 
 This project provides a video processing tool that utilizes advanced AI models, specifically Florence2 and SAM2, to detect and segment specific objects or activities in a video based on textual descriptions. The system identifies significant motion in video frames and then performs deep learning inference to locate objects or actions described by the user's textual input.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PcK_6anMRYnRcmOw5TkwFUT8lrXYoHUW?usp=sharing)
+<div style="display: flex; align-items: center; gap: 10px;">
+    <a href="https://www.kaggle.com/code/mithunparab/simple-video-summarization-using-text-to-segment-a" target="_blank">
+        <img src="https://kaggle.com/static/images/site-logo.png" alt="Kaggle Notebook" height="40" style="margin-bottom: -15px;">
+    </a>
+    <a href="https://colab.research.google.com/drive/1PcK_6anMRYnRcmOw5TkwFUT8lrXYoHUW?usp=sharing" target="_blank">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+    </a>
+</div>
 
-[<img src="https://kaggle.com/static/images/site-logo.png" height="50" style="margin-bottom:-15px" />](https://www.kaggle.com/code/mithunparab/simple-video-summarization-using-text-to-segment-a)
+---
 
 ## Installation
 
@@ -31,7 +38,7 @@ cd ..
 - tqdm
 and
 
-```
+```bash
 pip install -q einops spaces timm transformers samv2 gradio supervision opencv-python
 ```
 
@@ -83,6 +90,12 @@ The `video_flow.py` script processes videos using RAFT-based optical flow for fo
 python video_flow.py --input_video_path <path_to_input_video> --output_video_path <path_to_output_video> --mask_video_path <path_to_mask_video> --text_input "your text here"
 ```
 
+### WebUI
+
+```bash
+streamlit run app.py
+```
+
 ## Features
 
 - **Motion Detection**: Detect significant motions in the video to focus processing on relevant segments.
@@ -91,7 +104,7 @@ python video_flow.py --input_video_path <path_to_input_video> --output_video_pat
 
 ## To Do
 
-- [ ] **WebUI**
+- [x] **WebUI**
 - [ ] **Robust Video Synopsis**
 
 ## Related work
